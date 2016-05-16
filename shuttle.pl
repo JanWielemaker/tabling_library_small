@@ -4,10 +4,7 @@
 :- use_module(instrument).
 
 shuttle(N) :-
-	measure(shuttle(N), shuttle, N).
-
-shuttle(N) :-
-  c(N, _X).
+	measure(c(N, _X), shuttle, N).
 
 :- table c/2.
 
