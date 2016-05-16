@@ -46,7 +46,7 @@ benchmark(pyramid(500)).
 
 benchmark(bintree(18)).
 
-benchmark(test_joins(-)).
+benchmark(test_joins(12)).
 
-benchmark(mondial(-)).
+benchmark(mondial(0)).
 
