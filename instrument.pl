@@ -21,7 +21,7 @@ measure(Goal, Benchmark, Count) :-
 
 header :-
 	format('~w ~`.t ~w ~30|~`.t ~w~45| ~t~w~8+~n',
-	       ['Benchmark', 'Count', 'Time', 'SWI/hProlog']).
+	       ['Benchmark', 'Count', 'Time', 'hProlog/SWI']).
 
 clean_all :-
 	abolish_all_tables,
