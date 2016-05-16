@@ -1,13 +1,13 @@
-:- module(p_double_first,
-	  [ p_double_first/1			% +Count
+:- module(path_double_first,
+	  [ path_double_first/1			% +Count
 	  ]).
 :- use_module(instrument).
 
 :- dynamic e/2.
 
-p_double_first(N) :-
+path_double_first(N) :-
 	data(N),
-	measure(a(_X,_Y), p_double_first, N).
+	measure(a(_X,_Y), path_double_first, N).
 
 data(N) :-
 	retractall(e(_,_)),

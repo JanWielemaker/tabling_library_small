@@ -4,6 +4,7 @@
 	  ]).
 :- use_module(procps).
 :- reexport('../tabling_library-c-worklist/tabling').
+:- use_module(hprolog_timing).
 
 :- meta_predicate
 	measure(0, +, +).
@@ -14,10 +15,17 @@ measure(Goal, Benchmark, Count) :-
 	Goal,
 	statistics(runtime, [T1,_]),
 	T is T1-T0,
-	format('~w ~`.t ~D ~30|~`.t ~D msec~45|~n', [Benchmark, Count, T]).
+	hProlog_rel(Benchmark, Count, T, Rel),
+	format('~w ~`.t ~D ~30|~`.t ~D msec~45| ~2f~n', [Benchmark, Count, T, Rel]).
 
 clean_all :-
 	abolish_all_tables,
 	garbage_collect,
 	garbage_collect_clauses,
 	garbage_collect_atoms.
+
+hProlog_rel(Benchmark, Count, T, Rel) :-
+	(   hprolog_time(Benchmark, Count, HTime)
+	->  Rel is round(100*HTime/T)/100
+	;   Rel is 0
+	).

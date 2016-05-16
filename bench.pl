@@ -1,3 +1,4 @@
+:- set_prolog_flag(optimise, true).
 :- use_module([ fib,
 		recognize,
 		naive_reverse,
@@ -37,10 +38,10 @@ benchmark(pingpong(20 000)).
 benchmark(path_double_first_loop(50)).
 benchmark(path_double_first_loop(100)).
 
-benchmark(p_double_first(50)).
-benchmark(p_double_first(100)).
-benchmark(p_double_first(200)).
-benchmark(p_double_first(500)).
+benchmark(path_double_first(50)).
+benchmark(path_double_first(100)).
+benchmark(path_double_first(200)).
+benchmark(path_double_first(500)).
 
 benchmark(pyramid(500)).
 
