@@ -12,38 +12,41 @@
 	      ]).
 
 bench :-
-	fib(500),
-	fib(750),
-	fib(1 000),
-	fib(10 000),
+	forall(benchmark(G),
+	       call(G)).
 
-	recognize(20 000),
-	recognize(50 000),
+benchmark(fib(500)).
+benchmark(fib(750)).
+benchmark(fib(1 000)).
+benchmark(fib(10 000)).
 
-	naive_reverse(500),
-	naive_reverse(1 000),
+benchmark(recognize(20 000)).
+benchmark(recognize(50 000)).
 
-	shuttle(2 000),
-	shuttle(5 000),
-	shuttle(20 000),
-	shuttle(50 000),
+benchmark(naive_reverse(500)).
+benchmark(naive_reverse(1 000)).
 
-	pingpong(10 000),
-	pingpong(20 000),
+benchmark(shuttle(2 000)).
+benchmark(shuttle(5 000)).
+benchmark(shuttle(20 000)).
+benchmark(shuttle(50 000)).
 
-	path_double_first_loop(50),
-	path_double_first_loop(100),
+benchmark(pingpong(10 000)).
+benchmark(pingpong(20 000)).
 
-	p_double_first(50),
-	p_double_first(100),
-	p_double_first(200),
-	p_double_first(500),
+benchmark(path_double_first_loop(50)).
+benchmark(path_double_first_loop(100)).
 
-	pyramid(500),
+benchmark(p_double_first(50)).
+benchmark(p_double_first(100)).
+benchmark(p_double_first(200)).
+benchmark(p_double_first(500)).
 
-	bintree(18),
+benchmark(pyramid(500)).
 
-	test_joins(-),
+benchmark(bintree(18)).
 
-	mondial(-).
+benchmark(test_joins(-)).
+
+benchmark(mondial(-)).
 
