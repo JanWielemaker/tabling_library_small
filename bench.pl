@@ -11,8 +11,10 @@
 		test_joins,
 		mondial
 	      ]).
+:- use_module(instrument).
 
 bench :-
+	header,
 	forall(benchmark(G),
 	       call(G)).
 
