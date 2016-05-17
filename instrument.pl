@@ -4,7 +4,7 @@
 	    op(1150, fx, table)
 	  ]).
 :- use_module(procps).
-:- reexport('../tabling_library-c-worklist/tabling').
+:- reexport('../tabling_library/tabling').
 :- use_module(hprolog_timing).
 
 :- meta_predicate
