@@ -6,7 +6,8 @@
 % with tabling in fib-no-tabling-hprolog.pl
 
 :- module(fib,
-	  [ fib/1				% +Count
+	  [ fib/1,				% +Count
+	    fib/2				% +Count, Fib
 	  ]).
 :- use_module(instrument).
 
